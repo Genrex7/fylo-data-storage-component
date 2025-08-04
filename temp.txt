@@ -1,0 +1,122 @@
+```html
+
+<main class="main flex flex-1 items-center justify-center p-8">
+			<section class="section-component flex flex-col gap-4">
+				<div class="component-1 bg-Blue-850 p-10 rounded-lg rounded-tr-[5rem]">
+					<div class="logo-container">
+						<img src="src/images/logo.svg" alt="Fylo logo" />
+					</div>
+					<div class="icons-container flex gap-4 mt-8">
+						<div class="icon-button">
+							<img src="src/images/icon-document.svg" alt="Document icon" />
+						</div>
+						<div class="icon-button">
+							<img src="src/images/icon-folder.svg" alt="Folder icon" />
+						</div>
+						<div class="icon-button">
+							<img src="src/images/icon-upload.svg" alt="Upload icon" />
+						</div>
+					</div>
+				</div>
+
+				<div class="component-2 bg-Blue-850 p-10 rounded-lg space-y-4">
+          /-------------------------
+					<!-- Storage usage text -->
+					<p class="text-sm text-Blue-200 text-center">
+						You've used <span class="font-bold">815 GB</span> of your storage
+					</p>
+					
+					<!-- Progress bar container -->
+					<div class="space-y-2">
+						<!-- Progress bar -->
+						<div class="w-full bg-Blue-950 rounded-full h-5 p-1">
+							<div class="bg-gradient-to-r from-Gradient-start to-Gradient-end h-full rounded-full relative" style="width: 81.5%">
+								<!-- White dot at the end -->
+								<div class="absolute right-1 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full"></div>
+							</div>
+						</div>
+						
+						<!-- Storage labels -->
+						<div class="flex justify-between text-sm font-bold">
+							<span>0 GB</span>
+							<span>1000 GB</span>
+						</div>
+					</div>
+					
+					<!-- Storage remaining bubble -->
+					<div class="flex justify-center mt-6 md:justify-end">
+						<div class="storage-remaining bg-white text-Blue-950 px-6 py-4 rounded-lg relative">
+							<div class="text-center">
+								<div class="text-3xl font-bold">185</div>
+								<div class="text-sm font-bold tracking-wider text-Grayish-Blue">GB LEFT</div>
+							</div>
+							<!-- Triangle pointer (for desktop design) -->
+							<div class="triangle-pointer hidden"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+
+
+``` css
+/* Custom gradient for progress bar */
+.progress-gradient {
+	background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}
+
+/* Icon styling */
+.icon-button {
+	background-color: hsl(229, 57%, 11%);
+	padding: 1rem;
+	border-radius: 0.5rem;
+	transition: background-color 0.3s ease;
+}
+
+.icon-button:hover {
+	background-color: rgba(15, 23, 42, 0.8);
+}
+
+/* Desktop layout adjustments */
+@media (min-width: 768px) {
+	body {
+		background-image: url(/src/images/bg-desktop.png);
+	}
+	
+	.section-component {
+		flex-direction: row;
+		align-items: flex-end;
+		gap: 2rem;
+		max-width: 64rem;
+	}
+	
+	.component-1 {
+		flex-shrink: 0;
+	}
+	
+	.component-2 {
+		flex: 1;
+		position: relative;
+	}
+	
+	/* Position the "GB LEFT" bubble in top-right corner for desktop */
+	.storage-remaining {
+		position: absolute;
+		top: -3rem;
+		right: 2rem;
+	}
+	
+	.triangle-pointer {
+		display: block !important;
+		position: absolute;
+		bottom: 0;
+		right: 2rem;
+		transform: translateY(100%);
+		width: 0;
+		height: 0;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-top: 10px solid white;
+	}
+}
