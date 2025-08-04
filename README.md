@@ -7,7 +7,7 @@ This is a solution to the [Fylo data storage component](https://www.frontendment
 - [Frontend Mentor - Fylo data storage component solution](#frontend-mentor---fylo-data-storage-component-solution)
   - [Table of contents](#table-of-contents)
   - [Overview](#overview)
-  - [The challenge](#the-challenge)
+    - [The challenge](#the-challenge)
     - [Screenshot](#screenshot)
     - [Links](#links)
   - [My process](#my-process)
@@ -18,7 +18,7 @@ This is a solution to the [Fylo data storage component](https://www.frontendment
 
 ## Overview
 
-## The challenge
+### The challenge
 
 The challenge is to build out this data storage component and get it looking as close to the design as possible.
 
@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github/Testimonial-Grid-Section]()
-- Live Site URL: [Frontend-Mentor/Testimonial-Grid-Section]()
+- Solution URL: [Github/Fylo-data-storage-component](https://github.com/Genrex7/fylo-data-storage-component)
+- Live Site URL: [Frontend-Mentor/Fylo-data-storage-component](https://fylo-data-storage-component-two-smoky.vercel.app/)
 
 ## My process
 
