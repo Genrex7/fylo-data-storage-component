@@ -1,31 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+		<meta
+			name="description"
+			content="Frontend Mentor - Fylo data storage component solution"
+		/>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Fylo data storage component</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+		<link rel="icon" type="image/png" href="./favicon-32x32.png" />
+		<link rel="stylesheet" href="src/css/style.css" />
 
-  You’ve used 815 GB of your storage
+		<title>Frontend Mentor | Fylo data storage component</title>
+	</head>
+	<body
+		class="body-bottom-bg min-w-screen min-h-screen bg-Blue-950 font-raleway flex flex-col text-white100 lg:w-full"
+	>
+		<main
+			class="main flex flex-1 items-center justify-center p-6 text-sm text-Blue-200 sm:p-20 md:p-0"
+		>
+			<section
+				class="section-component w-full flex flex-col gap-4 md:flex-row md:gap-8 md:w-[90%] lg:w-[80%] xl:w-[70%]"
+			>
+				<div
+					class="component-1 bg-Blue-850 p-10 rounded-lg rounded-tr-[5rem] flex flex-col gap-6 md:flex-grow md:basis-3/10"
+				>
+					<div class="logo-container w-32 md:w-[10rem]">
+						<img src="src/images/logo.svg" alt="Fylo logo" />
+					</div>
+					<div class="icons-container flex gap-4 h-12">
+						<div
+							class="icon-container flex justify-center items-center p-3 bg-Blue-950 rounded-lg"
+						>
+							<img src="src/images/icon-document.svg" alt="Upload icon" />
+						</div>
+						<div
+							class="icon-container flex justify-center items-center p-3 bg-Blue-950 rounded-lg"
+						>
+							<img src="src/images/icon-folder.svg" alt="Upload icon" />
+						</div>
+						<div
+							class="icon-container flex justify-center items-center p-3 bg-Blue-950 rounded-lg"
+						>
+							<img
+								src="src/images/icon-upload.svg"
+								alt="Upload icon"
+								class="w-6 h-5"
+							/>
+						</div>
+					</div>
+				</div>
 
-  185 GB Left
-  
-  0 GB
-  1000 GB
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+				<div
+					class="component-2 bg-Blue-850 p-7 pb-13 rounded-lg flex flex-col gap-4 items-center md:items-start md:flex-grow md:basis-3/5 md:w-[65%] md:h-auto md:self-end md:p-8"
+				>
+					<!-- Storage usage text -->
+					<p class="data-left">
+						You've used
+						<span class="font-semibold text-white" id="gbConsumed">815 GB</span>
+						of your storage
+					</p>
+
+					<!-- Progress bar container -->
+					<div
+						class="progress-bar-container w-full flex flex-col gap-2 relative"
+					>
+						<div
+							class="progress-bar-content w-full bg-Blue-950 p-1 rounded-full"
+							id="progressBarContent"
+						>
+							<div
+								class="progress-bar bg-gradient-to-r from-Gradient-start to-Gradient-end rounded-full w-[81.5%] flex flex-row-reverse p-[2px]"
+								id="progressBar"
+								style="width: 81.5%"
+							>
+								<div
+									class="white-dot w-2.5 h-2.5 rounded-full bg-white"
+									id="sliderHandle"
+									style="touch-action: none"
+								></div>
+							</div>
+						</div>
+
+						<!-- white box -->
+						<div
+							class="data-left-box bg-white py-4 px-6 rounded-lg flex items-center justify-center gap-2 absolute transform left-1/2 translate-y-[90%] -translate-x-1/2 min-w-[11rem] md:translate-y-[-160%] md:translate-x-[.5rem] md:rounded-br-none lg:translate-x-[3rem] xl:translate-x-[7rem]"
+							id="dataLeftBox"
+						>
+							<span class="text-4xl text-Blue-950 font-semibold" id="gbLeft"
+								>185</span
+							><span class="text-Grayish-Blue uppercase font-bold text-sm"
+								>GB left</span
+							>
+							<div
+								class="tooltip-bottom absolute w-6 h-7 bg-white bottom-0 right-0 transform translate-y-[27px] translate-x-[1%] hidden md:block"
+								style="clip-path: polygon(100% 0, 0 0, 100% 100%)"
+							></div>
+						</div>
+						<div class="capacity w-full flex justify-between">
+							<span class="font-semibold">0 GB</span>
+							<span class="font-semibold">1000 GB</span>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="attribution text-[11px] text-Blue-200 text-center">
+			Challenge by
+			<a
+				href="https://www.frontendmentor.io?ref=challenge"
+				target="_blank"
+				class="text-blue-500 font-bold hover:text-blue-300 active:text-blue-300"
+				>Frontend Mentor</a
+			>. Coded by
+			<a
+				href="#"
+				class="text-blue-500 font-bold hover:text-blue-300 active:text-blue-300"
+				>Deepak Kumar Meena</a
+			>.
+		</footer>
+
+		<script src="src/script.js"></script>
+	</body>
 </html>
